@@ -10,6 +10,8 @@ final options = const['Megaman', 'Pokemon', 'Zelda', 'One piece'];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 10.0,
+        backgroundColor: Colors.redAccent,
         title: const Text("Listview de Tipo 2"),
       ),
       body: ListView.separated(
@@ -18,6 +20,10 @@ final options = const['Megaman', 'Pokemon', 'Zelda', 'One piece'];
         itemBuilder: (context, index) => ListTile(
           title: Text(options[index]),
           trailing: const Icon(Icons.arrow_forward_ios),
+          onTap: () {
+            final game = options[index];
+            print(game);
+          },
         ),
 
 
