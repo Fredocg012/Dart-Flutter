@@ -24,6 +24,14 @@ class MyApp extends StatelessWidget {
         'card'      : (BuildContext context) => const CardScreen(),
 
       },
+      //Cuando hay una screen que no existe, regresa a otra para no dar error
+      onGenerateRoute: (settings) {
+        print(settings);
+
+        return MaterialPageRoute(
+              builder: (context) => const Listview1Screen()
+              );
+      },
       
     );
   }
